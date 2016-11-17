@@ -1,3 +1,10 @@
+var goalie = {
+  x:20,
+  y:135,
+  width:20,
+  height:30,
+  color:'red',
+}
 var stickR1 = {
   x: 170,    //STICKS
   y:75,
@@ -24,9 +31,11 @@ var stickR3 = {
   y:35,
   width:20,
   height: 230,
-  color:'white',
+  test:'white',
+  color: 'red',
+  height1: 30,
 }
-var distance = 4;
+var distance = 20;
 
 
 
@@ -80,8 +89,8 @@ function da(){ //for draw
   rowB3();
 }
 function paddleRightSide(){
-  canvasContext.fillStyle = 'red';
-  canvasContext.fillRect(20, 135, 20, 30);
+  canvasContext.fillStyle = goalie.color;
+  canvasContext.fillRect(goalie.x, goalie.y, goalie.width, goalie.height);
 }
 function row1(){
   canvasContext.fillStyle = stickR1.test;     //STICKS
@@ -106,12 +115,12 @@ function row2(){
   canvasContext.fillStyle = stickR2.color;
   canvasContext.fillRect(stickR2.x, stickR2.y+260, stickR2.width, stickR2.height1);
 } function row3(){
-  canvasContext.fillStyle = stickR3.color;     //STICKS
+  canvasContext.fillStyle = stickR3.test;     //STICKS
   canvasContext.fillRect(stickR3.x,stickR3.y, stickR3.width, stickR3.height);
-  canvasContext.fillStyle = 'red';
-  canvasContext.fillRect(550, 235, 20, 30);
-  canvasContext.fillStyle = 'red';
-  canvasContext.fillRect(550, 35, 20, 30);
-  canvasContext.fillStyle = 'red';
-  canvasContext.fillRect(550, 135, 20, 30);
+  canvasContext.fillStyle = stickR3.color;
+  canvasContext.fillRect(stickR3.x, stickR3.y+200, stickR3.width, stickR3.height1);
+  canvasContext.fillStyle = stickR3.color;
+  canvasContext.fillRect(stickR3.x, stickR3.y, stickR3.width, stickR3.height1);
+  canvasContext.fillStyle = stickR3.color;
+  canvasContext.fillRect(stickR3.x, stickR3.y + 100, stickR3.width, stickR3.height1);
 }

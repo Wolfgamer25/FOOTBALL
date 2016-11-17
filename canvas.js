@@ -15,26 +15,9 @@ setInterval(updateAll, 1000/framesPerSecond); //speed of the ball
 function updateAll(){ //updates functions fps
   drawEveryThing();
   moveEveryThing();
-      document.body.onkeydown=function(event){
-    switch (event.keyCode){
-      case 81:  //player 1 defenders up Q
-        stickR1.y-=distance;
-        stickR1.y1 -= distance;
-        break;
-        case 83: // player 1 defenders down S
-        stickR1.y +=distance;
-        stickR1.y1 += distance;
-          break;
-          case 87: // player 1 middle up W
-          stickR2.y -= distance;
-          break;
-          case 68: //player 1 middle down d
-          stickR2.y += distance;
-          break;
-
-    }
+  keysPlayer1();
   }
-}
+
 
 
 function ballReset(){
@@ -75,7 +58,35 @@ function moveEveryThing(){
   }
 }
 function keysPlayer1(){
-
+  document.body.onkeydown=function(event){
+if (event.keyCode === 81){
+   //player 1 defenders up Q
+    goalie.y-=distance;
+  }
+  if (event.keyCode === 83){ // player 1 defenders down S
+    goalie.y +=distance;
+   }
+   if (event.keyCode === 87){
+    // player 1 middle up W
+      stickR1.y -= distance;
+      stickR1.y1 -= distance;
+  }
+    if (event.keyCode === 68){
+       //player 1 middle down d
+      stickR1.y += distance;
+      stickR1.y1 += distance;
+    }
+    if (event.keyCode === 69){
+      stickR2.y -= distance;
+}
+    if (event.keyCode === 70){
+      stickR2.y += distance;
+}   if (event.keyCode === 82){
+      stickR3.y -= distance;
+}   if (event.keyCode === 71){
+      stickR3.y += distance;
+}
+}
 }
 function keysPlayer2(){
 
