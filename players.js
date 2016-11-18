@@ -1,39 +1,41 @@
+
+
 //red team
 var goalie = {
     x: 20,
     y: 135,
-    width: 20,
-    height: 30,
-    color: 'red',
+    width: 50,
+    height: 50,
+    color: 'rgba(0, 0, 200, 0)',
 }
 var stickR1 = {
     x: 170, //STICKS
     y: 75,
-    width: 20,
+    width: 50,
     height: 150,
-    test: 'white',
-    color: 'red',
-    height1: 30,
+    test:"rgba(0, 0, 200, 0)",
+    color: 'rgba(0, 0, 200, 0)',
+    height1: 50,
 
 
 }
 var stickR2 = {
     x: 350,
     y: 25,
-    width: 20,
+    width: 35,
     height: 280,
-    test: 'white',
-    color: 'red',
-    height1: 20,
+    test: "rgba(0, 0, 200, 0)",
+    color: 'rgba(0, 0, 200, 0)',
+    height1: 35,
 }
 var stickR3 = {
     x: 550,
     y: 35,
-    width: 20,
+    width: 50,
     height: 230,
-    test: 'white',
-    color: 'red',
-    height1: 30,
+    test: "rgba(0, 0, 200, 0)",
+    color: "rgba(0, 0, 200, 0)",
+    height1: 50,
 }
 //blue team
 var goalieB = {
@@ -70,7 +72,7 @@ var stickB3 = {
   color: 'blue',
   height1: 30,
 }
-var distance = 20;
+var distance = 30;
 
 function keysPlayer() {
     document.body.onkeydown = function(event) {
@@ -174,7 +176,7 @@ function rowB2() {
     canvasContext.fillRect(stickB2.x, stickB2.y +260, stickB2.width, stickB2.height1);
 }
 
-function rowB3() {              35
+function rowB3() {
     canvasContext.fillStyle = stickB3.test; //STICKS
     canvasContext.fillRect(stickB3.x, stickB3.y, stickB3.width, stickB3.height);
     canvasContext.fillStyle = stickB3.color;
@@ -184,12 +186,7 @@ function rowB3() {              35
     canvasContext.fillStyle = stickB3.color;
     canvasContext.fillRect(stickB3.x, stickB3.y, stickB3.width, stickB3.height1);
 }
-// var player1 = {
-// goal:paddleLeftSide,
-// defense:row1(),
-// mid:row2(),
-// striker:row3
-// }
+
 function da() { //for draw
     paddleLeftSide();
     row1();
