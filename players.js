@@ -39,38 +39,38 @@ var stickR3 = {
 }
 //blue team
 var goalieB = {
-    x: 770,
+    x: 740,
     y: 135,
-    width: 20,
-    height: 30,
-    color: 'blue',
+    width: 50,
+    height: 50,
+    color: 'rgba(0, 0, 200, 0)',
 }
 var stickB1 = {
     x: 620, //STICKS
     y: 75,
-    width: 20,
+    width: 40,
     height: 150,
-    test: 'white',
-    color: 'blue',
-    height1: 30,
+    test: 'rgba(0, 0, 200, 0)',
+    color: 'rgba(0, 0, 200, 0)',
+    height1: 40,
 }
 var stickB2 = {
   x: 450, //STICKS
   y: 25,
-  width: 20,
+  width: 35,
   height: 280,
-  test: 'white',
-  color: 'blue',
-  height1: 20,
+  test: 'rgba(0, 0, 200, 0)',
+  color: 'rgba(0, 0, 200, 0)',
+  height1: 35,
 }
 var stickB3 = {
   x: 260, //STICKS
   y: 35,
-  width: 20,
+  width: 40,
   height: 230,
-  test: 'white',
-  color: 'blue',
-  height1: 30,
+  test: 'rgba(0, 0, 200, 0)',
+  color: 'rgba(0, 0, 200, 0)',
+  height1: 40,
 }
 var distance = 30;
 
@@ -79,73 +79,85 @@ function keysPlayer() {
         if (keys[81] && goalie.y > 0) {
             //goalie up q
             goalie.y -= distance;
+
         }
-        if (keys[65] && goalie.y < canvas.height-goalie.height*1.2) { // player 1 defenders down S
+        if (keys[65] && goalie.y < canvas.height-goalie.height) { // player 1 defenders down S
             // goalie down a
             goalie.y += distance;
         }
         if (keys[87] && stickR1.y > 0 ) {
             // defendersR up w
             stickR1.y -= distance;
-            stickR1.y1 -= distance;
         }
         if (keys[83] && stickR1.y < canvas.height- stickR1.height*1.1) {
             //defendersR down s
             stickR1.y += distance;
-            stickR1.y1 += distance;
+
         }
         if (keys[69] && stickR2.y > 10) {
             //midR up e
             stickR2.y -= distance;
         }
-        if (keys[68] && stickR2.y <canvas.height - stickR2.height*1.05) {
+        if (keys[68] && stickR2.y <canvas.height - stickR2.height*1.08) {
             //midR down d
             stickR2.y += distance;
         }
-        if (keys[82] && stickR3.y > 0) {
+        if (keys[87] && stickR3.y > 0) {
             //strikerR up r
             stickR3.y -= distance;
         }
-        if (keys[70] && stickR3.y <canvas.height - stickR3.height*1.1) {
+        if (keys[83] && stickR3.y <canvas.height - stickR3.height*1.1) {
             //strikerR down f
             stickR3.y += distance;
         }
-          if (keys[74] && goalieB.y > 0) {
+          if (keys[76] && goalieB.y > 0) {
               //goalieB  up  j
               goalieB.y -= distance;
           }
-          if (keys[77] && goalieB.y < canvas.height-goalieB.height*1.2) { // player 1 defenders down S
+          if (keys[190] && goalieB.y < canvas.height-goalieB.height*1.2) { // player 1 defenders down S
               //goalieB down m
               goalieB.y += distance;
           }
-          if (keys[75] && stickB1.y > 0 ) {
+          if (keys[74] && stickB1.y > 0 ) {
               // defendersB up k
               stickB1.y -= distance;
 
           }
-          if (keys[188] && stickB1.y < canvas.height- stickB1.height*1.1) {
+          if (keys[77] && stickB1.y < canvas.height- stickB1.height*1.1) {
               //defendersB down ,
               stickB1.y += distance;
 
           }
-          if (keys[76] && stickB2.y > 10) {
+          if (keys[75] && stickB2.y > 10) {
               // midB up l
               stickB2.y -= distance;
           }
-          if (keys[190] && stickB2.y <canvas.height - stickB2.height*1.05) {
+          if (keys[188] && stickB2.y <canvas.height - stickB2.height*1.05) {
               //midB down .
               stickB2.y += distance;
           }
-          if (keys[186] && stickB3.y > 0) {
+          if (keys[74] && stickB3.y > 0) {
               //strikerB up ;
               stickB3.y -= distance;
           }
-          if (keys[191] && stickB3.y <canvas.height - stickB3.height*1.1) {
+          if (keys[77] && stickB3.y <canvas.height - stickB3.height*1.1) {
               //strikerB down;
               stickB3.y += distance;
           }
+          if (keys[80]){
+            if (!gamePaused) {
+          ballSpeedX = 0;
+          ballSpeedY = 0;
+           gamePaused = true
+ } else if (gamePaused) {
+   ballSpeedY = 5;
+   ballSpeedX = 5;
+   gamePaused = false
+
+          }
       }
     }
+  }
 
 function paddleLeftSide() {
     canvasContext.fillStyle = goalieB.color;

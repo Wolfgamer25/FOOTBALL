@@ -1,4 +1,29 @@
-body {
+
+body{
+  background:url('pics/8ctVID.jpg');
+  background-position:top;
+  background-size: 2000px 850px;
   text-align: center;
-  background: url("https://c2.staticflickr.com/6/5609/15430699389_a89d7c8f59_b.jpg");
+
+
+
+}
+#gameCanvas {
+  text-align: center;
+display: inline-block;
+
+}
+h1{
+  text-align: center;
+}
+div img:first-child {
+  height: 350px;
+  width: 17.8%;
+  float: left;
+  display: inline-block;;
+} div img:nth-child(2){
+  height: 350px;
+  width: 17.8%;
+  float: right;
+  display: inline-block;
 }
