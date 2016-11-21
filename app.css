@@ -42,7 +42,12 @@ div img:first-child {
   float:right;
   font-size: 50px;
   color: blue;
-  
+
+
+}
+#win{
+  font-size: 100px;
+  text-align: center;
 
 }
 .hi{

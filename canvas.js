@@ -73,6 +73,7 @@ function updateAll() { //updates functions fps
     keysPlayer();
     scoreP1();
     scoreP2();
+    winner();
 
 
 }
@@ -94,6 +95,12 @@ function ballResetGB() {
     ballY = goalieB.y;
     scoreR++;
     alert(scoreR);
+}
+function ballReset(){
+  ballY = canvas.height/2;
+  ballX= canvas.width/2;
+  ballSpeedY = -ballSpeedY;
+  ballSpeedX = -ballSpeedX;
 }
 
 function drawEveryThing() {
@@ -314,11 +321,26 @@ function moveEveryThing() {
             ballSpeedY = -ballSpeedY
             console.log('hit')
         }
-    }
+    }     if (ballX === stickB3.x) {
+        if (ballY > stickB3.y &&
+            ballY < stickB3.y + stickB3.height1) {
+            ballSpeedY = -ballSpeedY
+            console.log('hit')
+        }
+        if (ballY > stickB3.y + 100 &&
+            ballY < stickB3.y + 100 + stickB3.height1) {
+            ballSpeedY = -ballSpeedY
+            console.log('hit')
+        }
+        if (ballY > stickB3.y + 200 &&
+            ballY < stickB3.y + 200 + stickB3.height1) {
+            ballSpeedY = -ballSpeedY
+            console.log('hit')
+        }
 
 
 }
-
+}
 
 
 
