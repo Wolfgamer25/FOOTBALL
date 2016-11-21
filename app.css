@@ -1,9 +1,15 @@
+@font-face {
+  font-family: 'Pokemon  Solid';
+  src: url('http://www.fontsaddict.com/fontface/pokemon-solid.TTF');
+}
 
 body{
   background:url('pics/8ctVID.jpg');
   background-position:top;
   background-size: 2000px 850px;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
+
 
 
 
@@ -27,3 +33,61 @@ div img:first-child {
   float: right;
   display: inline-block;
 }
+#player1{
+  float:left;
+  font-size: 50px;
+  color: red;
+}
+#player2{
+  float:right;
+  font-size: 50px;
+  color: blue;
+  
+
+}
+.hi{
+  display: flex;
+align-items: center;
+justify-content: center;
+
+
+}
+
+.names{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-between;
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+
+
+
+}
+#name1{
+  height: 30px;
+  width: 150px;
+  font-size: 25px;
+  font-family: 'pokemon solid';
+  color: red;
+background:rgba(0, 0, 200, 0);
+border:rgba(0, 0, 200, 0);
+}
+#name2{
+  height: 30px;
+  width: 150px;
+  font-size: 25px;
+  font-family: 'pokemon solid';
+  color: blue;
+  background:rgba(0, 0, 200, 0);
+  border:rgba(0, 0, 200, 0);
+
+}
+/*#left {
+  float:left;
+  display: inline-block;
+}
+#right{
+  text-align: right;
+
+}*/

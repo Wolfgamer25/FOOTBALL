@@ -76,6 +76,7 @@ var distance = 30;
 
 function keysPlayer() {
     document.body.onkeydown = function(event) {
+
         if (keys[81] && goalie.y > 0) {
             //goalie up q
             goalie.y -= distance;
@@ -148,11 +149,11 @@ function keysPlayer() {
             if (!gamePaused) {
           ballSpeedX = 0;
           ballSpeedY = 0;
-           gamePaused = true
+           gamePaused = true;
  } else if (gamePaused) {
    ballSpeedY = 5;
    ballSpeedX = 5;
-   gamePaused = false
+   gamePaused = false;
 
           }
       }

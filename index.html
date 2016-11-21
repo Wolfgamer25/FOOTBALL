@@ -2,19 +2,43 @@
 <html>
   <head>
     <meta charset="utf-8">
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+
     <title></title>
     <link rel="stylesheet" type="text/css" href ="app.css"></link>
   </head>
   <body>
     <h1> <img src = "pics/PokeBall (1).png" /></h1>
-  
+     <div class='hidden'>
     <div>
     <img src ="pics/wallhaven-11270 (1).jpg"/>
     <img src="pics/wallhaven-11270 copy.jpg"/>
   </div>
     <canvas id = 'gameCanvas' width = '800' height = '350' style = "border: black solid 1px">
     </canvas>
+    <div>
+    <p id = 'player1' >score</p>
+    <p id =  'player2'>score</p>
+  </div>
+</div>
+<div class = 'goaway'>
 
+<div class= "names">
+<p id= 'left'> enter name<input  id = "name1" value=' PlayerRed  ' class="col-lg-6"></input></p>
+
+ <p id = 'right'>enter name<input id = 'name2' value=' PlayerBlue  ' ></input></p>
+<!-- <button id='hi'> show </button> -->
+</div>
+<div class='hi'>
+<img  onclick="show() " src = "pics/tumblr_nu4n8oxf6b1r7tm2fo1_500.gif">
+</div>
+ </div>
     <script src="players.js"></script>
     <script src="dom.js"></script>
     <script src="canvas.js"></script>

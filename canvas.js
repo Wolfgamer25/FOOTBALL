@@ -15,14 +15,17 @@ var blastoiseLoaded = false;
 var canvasBackground = document.createElement("img")
 var canvasBackgroundLoaded = false;
 var canvas;
-var gamePaused = false;
 var canvasContext;
+var gamePaused = false;
 var ballX = 400;
-var ballSpeedX = 5;
+var ballSpeedX = 0;
 var ballY = 175;
-var ballSpeedY = 5;
+var ballSpeedY = 0;
 var keys = [];
 var paddley = goalie.y;
+var scoreB = 0;
+var scoreR = 0;
+
 window.onload = function() {
     canvasBackground.onload = function() {
         canvasBackgroundLoaded = true;
@@ -68,17 +71,29 @@ function updateAll() { //updates functions fps
     drawEveryThing();
     moveEveryThing();
     keysPlayer();
-
+    scoreP1();
+    scoreP2();
 
 
 }
 
 
+function ballResetGR() {
+    ballX = goalie.x + 10;
+    ballY = goalie.y;
+    ballSpeedX = -ballSpeedX;
+    ballSpeedY = - ballSpeedY;
+    scoreB++;
+    alert(scoreB);
+}
 
-function ballReset() {
-    ballSpeedX = -ballSpeedX
-    ballX = canvas.width / 2;
-    ballY = canvas.height / 2;
+function ballResetGB() {
+    ballSpeedX;
+    ballSpeedY
+    ballX = goalieB.x - 50;
+    ballY = goalieB.y;
+    scoreR++;
+    alert(scoreR);
 }
 
 function drawEveryThing() {
@@ -184,6 +199,8 @@ function drawEveryThing() {
         canvasContext.drawImage(blastoise,
             goalieB.x, goalieB.y, goalieB.width, goalieB.height)
     }
+
+
     canvasContext.fillStyle = 'white';
     canvasContext.fillRect(1,canvas.height/2 -60, 10, 120  )
     canvasContext.fillStyle = 'white';
@@ -204,7 +221,7 @@ function moveEveryThing() {
     box();
     if (ballX === goalie.x) {
         if (ballY > goalie.y &&
-            ballY < goalie.y + goalie.height) {
+            ballY < goalie.y + goalie.height + 10) {
             ballSpeedX = -ballSpeedX
         }
     }
@@ -256,7 +273,7 @@ function moveEveryThing() {
     }
     if (ballX === goalieB.x) {
         if (ballY > goalieB.y &&
-            ballY < goalieB.y + goalieB.height) {
+            ballY < goalieB.y + goalieB.height+10) {
             ballSpeedX = -ballSpeedX;
         }
     }
@@ -318,16 +335,21 @@ function box() {
         ballSpeedX *= -1; //ballReset();
     }
     if (ballX < 0 && ballY < canvas.height / 2 + 60 && ballY > canvas.height / 2 - 60) {
-        ballReset();
+        ballResetGR();
+
     }
     if (ballX === canvas.width) {
         // ballReset();
         ballSpeedX *= -1; //ballReset();
     }
     if (ballX === canvas.width && ballY < canvas.height / 2 + 60 && ballY > canvas.height / 2 - 60) {
-        ballReset();
+        ballResetGB();
         console.log('huh')
     }
+}
+function score (){
+  canvasContext.textBaseline = 'top';
+  canvasContext.fillText('player 1')
 }
 
 document.body.addEventListener("keydown", function(e) {
