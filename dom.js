@@ -5,6 +5,8 @@ function scoreP1(){
 function scoreP2(){
   $('#player2').text(name2.value + ': ' + scoreB);
 }
+$('#unmute').hide();
+$('.audio').hide();
 $('.winner').hide();
 $('.hidden').hide();
 function show(){
@@ -15,7 +17,19 @@ function show(){
      $('.winner').hide();
 
 
+
 }
+function audioShow(){
+  $('.audio').show();
+  $('.mute').hide();
+   $('#unmute').show();
+  }
+  function audioHide(){
+    $('.audio').hide();
+    $('.mute').show();
+    $('#unmute').hide();
+  }
+
 function winner(){
   if(scoreR === 3){
     $('.hidden').hide();
