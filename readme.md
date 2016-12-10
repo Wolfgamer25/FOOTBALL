@@ -8,6 +8,13 @@ HTML, CSS, Javascript
 jquery
 Atom
 Google fonts
+#controles
+red team
+'q' goalie Up
+'a' goalie Down
+blue team
+';' goalie up
+'/' goalie down
 
 #WireFrame
 ![WireFrame](pics/15145292_273842659679263_1149834867_o.jpg)
